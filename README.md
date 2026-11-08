@@ -13,14 +13,20 @@ cd dotfiles
 ## Usage
 
 ```bash
-cd stow
-
 # Install all dotfiles in $HOME
-stow *
+make stow
 
-# Delete all dotfiles from $HOME
-stow -D *
+# Uninstall all dotfiles and only install the `bash` and `vim` packages
+make unstow
+cd stow
+stow bash vim
+cd ..
 
-# First delete, then install again
-stow -R *
+# Uninstall the `vim` package
+cd stow
+stow -D vim
+cd ..
+
+# Uninstall the `bash` package and install all packages
+make restow
 ```
