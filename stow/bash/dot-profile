@@ -10,3 +10,9 @@ export VISUAL="$EDITOR"
 
 # Add user executables to PATH
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+# Required for using SSH agent systemd service
+#
+# https://wiki.archlinux.org/title/SSH_keys#Start_ssh-agent_with_systemd_user
+#
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket

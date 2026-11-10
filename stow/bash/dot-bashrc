@@ -7,11 +7,3 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
-# Required for using SSH agent systemd service
-#
-# https://wiki.archlinux.org/title/SSH_keys#Start_ssh-agent_with_systemd_user
-#
-if [[ $(systemctl --user is-active ssh-agent.service) == "active" ]]; then
-    export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
-fi
